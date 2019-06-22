@@ -1,19 +1,13 @@
 package DesignPattern.VendingMachine;
-import static org.junit.Assert.*;
 
 import java.util.List;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
 
 
 
 public class VendingMachineTest {
     private static VendingMachine vm;
    
-    @BeforeClass
+    /*@BeforeClass
     public static void setUp(){
         vm = VendingMachineFactory.createVendingMachine();
     }
@@ -42,7 +36,7 @@ public class VendingMachineTest {
         System.out.println("change = "+change);
         //there should not be any change                              
         assertTrue(change.isEmpty());                              
-    }
+    }*/
    /*
     @Test
     public void testBuyItemWithMorePrice(){
@@ -129,7 +123,7 @@ public class VendingMachineTest {
        
     }*/
    
-    @Ignore
+    /*@Ignore
     public void testVendingMachineImpl(){
         VendingMachineImpl vm = new VendingMachineImpl();
     }
@@ -140,5 +134,5 @@ public class VendingMachineTest {
             total = total + c.getDenomination();
         }
         return total;
-    }
+    }*/
 }

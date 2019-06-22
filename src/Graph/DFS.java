@@ -8,6 +8,20 @@ public class DFS extends Graph{
 		super(vertex);
 	}
 	
+	/*
+	 * Work for disconnected components
+	 */
+	public void DFSComponent() {
+		boolean visited[] = new boolean[vertex];
+		for(int i = 0 ; i < vertex;i++) {
+				if(visited[i] == false)
+					DFSearchUtil(i,visited);
+		}
+	}
+	
+	/*
+	 * Not worked for disconnected components.
+	 */
 	public void DFSearch(int start){
 		boolean visited[] = new boolean[vertex];
 		DFSearchUtil(start, visited);
@@ -16,10 +30,8 @@ public class DFS extends Graph{
 	public void DFSearchUtil(int vertex, boolean visited[] ){
 		visited[vertex] = true;
 		System.out.print(vertex+" ");
-		
-		Iterator<Integer> iter = adj[vertex].iterator();
-		while(iter.hasNext()) {
-			int data = iter.next();
+
+		for(int data : adj[vertex]) {
 			if(visited[data] == false){
 				DFSearchUtil(data, visited);
 			}
@@ -41,7 +53,8 @@ public class DFS extends Graph{
 //		dfs.addEdge(2, 3);
 //		dfs.addEdge(3, 3);
 		
-		dfs.DFSearch(0);
+		//dfs.DFSearch(0);
+		dfs.DFSComponent();
 	}
 
 }

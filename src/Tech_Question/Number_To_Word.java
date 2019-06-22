@@ -43,11 +43,13 @@ public class Number_To_Word {
 	}
 	// Recursive call to function
 	String numToWord(int num){
+		//System.out.println("num = "+num);
 		String finalString = "";
 		if(num < 10) finalString = onePlaceDigit[num];
 		else if(num >=10 && num < 100) finalString = doubleDigitToWord(num);
 		else{
 			int m = getBase(num); //find base
+			//System.out.println("base = "+baseToWord(m));
 			finalString =  numToWord(num/m) +" "+ baseToWord(m) +" "+ numToWord(num%m);
 		}
 		return finalString;

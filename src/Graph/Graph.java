@@ -1,12 +1,13 @@
 package Graph;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Graph {
 	//Number of vertex in the graph
 	int vertex;
 	//Store edge in the form from to To.
-	LinkedList<Integer> adj[];
+	List<Integer> adj[];
 	Graph(int vertex){
 		this.vertex = vertex;
 		adj = new LinkedList[vertex];

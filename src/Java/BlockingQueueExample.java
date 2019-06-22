@@ -66,18 +66,20 @@ import java.util.concurrent.TimeUnit;
 public class BlockingQueueExample {
 	public static void main(String[] args) throws InterruptedException {
 		
-		BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(3);
+		BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>(1);
 		ThreadPoolExecutor th = new ThreadPoolExecutor(10, 50, 10, TimeUnit.SECONDS, queue) ;
 		th.prestartAllCoreThreads();
 		
 		
 		
         List<Runnable> taskGroup = new ArrayList<Runnable>();
+        List<Runnable> taskGroup1 = new ArrayList<Runnable>();
         taskGroup.add(new TaskOne());
-        taskGroup.add(new TaskTwo());
-        taskGroup.add(new TaskThree());
+        taskGroup1.add(new TaskTwo());
+        taskGroup1.add(new TaskThree());
         
         queue.put(new MultiRunnable(taskGroup));
+        queue.put(new MultiRunnable(taskGroup1));
 		
 		
 	}

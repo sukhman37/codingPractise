@@ -4,6 +4,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Used in dijkstra algorithms
+ * 
+ */
 public class BFS extends Graph{
 	
 	BFS(int vertex) {
@@ -17,17 +21,19 @@ public class BFS extends Graph{
 		
 		queue.add(start);
 		visited[start] = true;
-		while(queue.size() != 0){
+		
+		while(!queue.isEmpty()){
+			
 			int data = queue.poll();
 			System.out.println(data);
-			Iterator<Integer> iter = adj[data].iterator();
-			while(iter.hasNext()){
-				int item = iter.next();
+			
+			for(int item : adj[data]){
 				if(visited[item] == false){
 					visited[item] = true;
 					queue.add(item);
 				}		
 			}
+			
 		}
 	}
 
