@@ -6,10 +6,10 @@ import java.util.LinkedList;
 public class findMaxFirstk {
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6};
-        printFirstMaxKNegative(arr,3);
+        printFirstMaxK(arr,3);
     }
 
-    public static void printFirstMaxKNegative(int arr[], int k){
+    public static void printFirstMaxK(int arr[], int k){
         Deque<Integer> queue = new LinkedList<>();
 
         int i=0;
